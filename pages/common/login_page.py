@@ -6,7 +6,7 @@ class LoginPage(BasePage):
         self.username_input = "placeholder=usuario@consultorio.com"
         self.password_input = "placeholder=••••••••"
         self.login_button = "text=Iniciar sesión"
-        self.user_profile_icon = "#radix-\:r0\:"
+        self.user_profile_icon = "#radix-\\:r0\\:"
 
     def login_to_application(self, user, password):
         self.fill_input(self.username_input, user)
