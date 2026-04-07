@@ -35,10 +35,8 @@ class BasePage:
         return locator
 
     def click_element(self, selector: str):
-        """Acción de click con espera previa integrada."""
         self.get_locator(selector).click()
 
     def fill_input(self, selector: str, text: str):
-        """Limpia y escribe en el campo con espera previa integrada."""
         element = self.get_locator(selector)
         element.fill(text)
