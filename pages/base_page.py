@@ -5,6 +5,9 @@ class BasePage:
         self.page = page
         self.timeout = 5000
 
+    def navigate_to(self, url: str):
+        self.page.goto(url, wait_until="networkidle")
+    
     def get_locator(self, selector: str) -> Locator:
         
         strategies = {
@@ -13,7 +16,7 @@ class BasePage:
             "placeholder=": self.page.get_by_placeholder,
             "alt=": self.page.get_by_alt_text,
             "title=": self.page.get_by_title,
-            "id=": self.page.get_by_test_id
+            "test_id=": self.page.get_by_test_id
         }
         
         found_method = None
